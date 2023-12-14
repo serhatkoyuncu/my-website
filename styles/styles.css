@@ -10,19 +10,25 @@
  * governing permissions and limitations under the License.
  */
 
- :root {
+:root {
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
   --background-color: #fff;
+  --banner-background-image: url(../assets/banner_bg.png);
+  --background-color: #fff;
+  --header-background-color: transparent;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #000;
+  --email-icon-width: 50px;
+  --header-padding-top: 3rem;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono",
+    monospace;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -38,17 +44,15 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
-
+  --nav-height: unset;
 }
 
 @font-face {
   font-family: roboto-fallback;
   size-adjust: 100.06%;
   ascent-override: 95%;
-  src: local('Arial');
+  src: local("Arial");
 }
-
 
 @media (width >= 900px) {
   :root {
@@ -79,24 +83,45 @@ header {
   height: var(--nav-height);
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
-p, dl, ol, ul, pre, blockquote {
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -108,13 +133,16 @@ hr {
   border-bottom: 1px solid var(--overlay-background-color);
 }
 
-code, pre, samp {
+code,
+pre,
+samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code, samp {
-  padding: .125em;
+code,
+samp {
+  padding: 0.125em;
 }
 
 pre {
@@ -124,7 +152,7 @@ pre {
 main pre {
   background-color: var(--overlay-background-color);
   padding: 1em;
-  border-radius: .25em;
+  border-radius: 0.25em;
   overflow-x: auto;
   white-space: pre;
 }
@@ -140,8 +168,10 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button {
-  font-family: var(--body-font-family);
+a.button:any-link,
+button {
+  color: var(--background-color);
+  /* font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
@@ -157,23 +187,28 @@ a.button:any-link, button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 30px; */
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
+  /* background-color: var(--link-hover-color);
+  cursor: pointer; */
 }
 
-button:disabled, button:disabled:hover {
-  background-color: var(--overlay-background-color);
-  cursor: unset;
+button:disabled,
+button:disabled:hover {
+  /* background-color: var(--overlay-background-color);
+  cursor: unset; */
 }
 
-a.button.secondary, button.secondary {
-  background-color: unset;
+a.button.secondary,
+button.secondary {
+  /* background-color: unset;
   border: 2px solid currentcolor;
-  color: var(--text-color)
+  color: var(--text-color); */
 }
 
 main input {
@@ -248,4 +283,10 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+main .section:has(.bg-orange) {
+  background-image: var(--banner-background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
