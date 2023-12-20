@@ -7,6 +7,31 @@ header .nav-wrapper {
   padding: var(--header-padding-top) 0;
 }
 
+@keyframes border_anim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+header nav a:any-link:hover {
+  position: relative;
+  padding-bottom: 1rem;
+  text-decoration: none;
+}
+
+header nav a:any-link:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  border-bottom: solid 2px #fff;
+  animation: border_anim 0.3s linear forwards;
+}
+
 header nav {
   box-sizing: border-box;
   display: grid;

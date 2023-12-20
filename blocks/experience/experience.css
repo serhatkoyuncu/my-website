@@ -15,10 +15,11 @@
   font-size: var(--body-font-size-xs);
 }
 
-.experience h5 {
+.experience h4 {
   margin-bottom: 0;
   color: var(--header-background-color);
 }
+
 .experience h6 {
   font-style: italic;
   color: rgba(0, 0, 0, 0.5);
