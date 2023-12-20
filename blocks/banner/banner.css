@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.banner a:any-link {
+  color: #fff;
+}
+
 .banner img {
   width: 100%;
 }

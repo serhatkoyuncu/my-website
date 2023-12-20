@@ -4,7 +4,7 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
-  padding-top: var(--header-padding-top);
+  padding: var(--header-padding-top) 0;
 }
 
 header nav {

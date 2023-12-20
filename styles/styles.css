@@ -17,12 +17,12 @@
   --background-color: #fff;
   --banner-background-image: url(../assets/banner_bg.png);
   --background-color: #fff;
-  --header-background-color: transparent;
+  --header-background-color: #ff9064;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #000;
   --email-icon-width: 50px;
-  --header-padding-top: 3rem;
+  --header-padding-top: 2rem;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
@@ -165,50 +165,6 @@ a:any-link {
 a:hover {
   text-decoration: underline;
   color: var(--link-hover-color);
-}
-
-/* buttons */
-a.button:any-link,
-button {
-  color: var(--background-color);
-  /* font-family: var(--body-font-family);
-  display: inline-block;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
-  text-align: center;
-  font-style: normal;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
-  margin: 16px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 30px; */
-}
-
-a.button:hover,
-a.button:focus,
-button:hover,
-button:focus {
-  /* background-color: var(--link-hover-color);
-  cursor: pointer; */
-}
-
-button:disabled,
-button:disabled:hover {
-  /* background-color: var(--overlay-background-color);
-  cursor: unset; */
-}
-
-a.button.secondary,
-button.secondary {
-  /* background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color); */
 }
 
 main input {

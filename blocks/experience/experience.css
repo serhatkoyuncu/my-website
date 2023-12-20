@@ -1,0 +1,78 @@
+.experience-container .default-content-wrapper {
+  color: var(--header-background-color);
+}
+
+.experience > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience img {
+  width: 100%;
+}
+
+.experience ul li {
+  font-size: var(--body-font-size-xs);
+}
+
+.experience h5 {
+  margin-bottom: 0;
+  color: var(--header-background-color);
+}
+.experience h6 {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 0;
+}
+
+.experience > div > div {
+  order: 1;
+}
+
+.experience > div > .experience-img-col {
+  order: 0;
+}
+
+.experience > div > .experience-img-col img {
+  display: block;
+}
+
+.experience .experience-col img {
+  max-width: 80px;
+  opacity: 0.5;
+}
+
+.experience a.button:any-link {
+  color: var(--link-color);
+}
+
+@media (width >= 900px) {
+  .experience > div {
+    align-items: stretch;
+    flex-direction: unset;
+    /* gap: 32px; */
+  }
+
+  .experience > div > div {
+    flex: 1;
+    order: unset;
+    padding: 32px;
+  }
+
+  .experience > div > div:hover {
+    box-shadow: 20px 20px 50px grey;
+  }
+
+  .experience > div:first-child > div:first-child {
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .experience > div:first-child > div:last-child {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .experience > div:last-child > div:last-child {
+    border-left: 2px solid rgba(0, 0, 0, 0.2);
+  }
+}
