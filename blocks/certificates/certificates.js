@@ -20,6 +20,10 @@ export default function decorate(block) {
         createOptimizedPicture(img.src, img.alt, false, [{ width: "750" }])
       )
   );
+  ul.querySelectorAll("a").forEach((a) => {
+    a.setAttribute("target", "_blank");
+    a.setAttribute("title", "certificate");
+  });
   block.textContent = "";
   block.append(ul);
 }
