@@ -223,6 +223,10 @@ main .section {
   padding: 64px 16px;
 }
 
+main .section .default-content-wrapper h2 {
+  color: var(--header-background-color);
+}
+
 @media (width >= 600px) {
   main .section {
     padding: 64px 32px;
