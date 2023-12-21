@@ -22,10 +22,22 @@
 
 .projects .projects-card-body > *:first-child {
   margin-top: 0;
+  text-align: center;
 }
 
 .projects > ul > li img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.projects .projects-card-body ul li {
+  font-size: var(--heading-font-size-xs);
+}
+
+@media (width >= 900px) {
+  .projects .projects-card-body ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
