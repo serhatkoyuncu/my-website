@@ -1,0 +1,40 @@
+.slider > ul {
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 1.5rem;
+  display: flex;
+  grid-gap: 48px;
+  overflow-x: auto;
+}
+
+.slider > ul > li {
+  background-color: var(--background-color);
+  min-width: 192px;
+  max-width: 192px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px grey;
+}
+
+.slider .slider-card-body {
+  margin: 16px;
+}
+
+.slider .slider-card-image {
+  line-height: 0;
+}
+
+.slider .slider-card-body > *:first-child {
+  margin-top: 0;
+}
+
+.slider > ul > li img {
+  width: 100px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
