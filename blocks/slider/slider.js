@@ -25,11 +25,12 @@ export default function decorate(block) {
 
   setInterval(function () {
     if (
-      block.firstElementChild.scrollLeft == block.firstElementChild.offsetWidth
+      block.firstElementChild.scrollLeft ==
+      (block.firstElementChild.children.length - 5) * 240
     ) {
       block.firstElementChild.scrollBy({
         top: 0,
-        left: -block.firstElementChild.offsetWidth,
+        left: -block.firstElementChild.scrollLeft,
         behavior: "smooth",
       });
     } else {
