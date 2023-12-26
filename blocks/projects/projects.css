@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   grid-gap: 16px;
 }
 
@@ -27,7 +27,7 @@
 
 .projects > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  /* aspect-ratio: 4 / 3; */
   object-fit: cover;
 }
 
@@ -35,9 +35,20 @@
   font-size: var(--heading-font-size-xs);
 }
 
+.projects video {
+  display: none;
+  width: 100%;
+}
+
 @media (width >= 900px) {
   .projects .projects-card-body ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .projects > ul {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
