@@ -4,7 +4,7 @@
   padding: 1.5rem;
   display: flex;
   grid-gap: 48px;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .slider > ul > li {
