@@ -12,7 +12,9 @@ export default function decorate(block) {
       const newH3 = document.createElement("h3");
       if (a.length) {
         a.forEach((item) => {
-          item.setAttribute("target", "_blank");
+          if (!item.href.startsWith("tel")) {
+            item.setAttribute("target", "_blank");
+          }
         });
       }
       if (h3.length) {
