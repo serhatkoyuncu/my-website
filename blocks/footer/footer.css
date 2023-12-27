@@ -19,3 +19,7 @@ footer img {
   height: 25px;
   margin: 0 8px;
 }
+
+footer a:hover {
+  text-decoration: none;
+}

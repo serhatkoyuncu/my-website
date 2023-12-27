@@ -16,6 +16,22 @@ export default async function decorate(block) {
   // decorate footer DOM
   const footer = document.createElement("div");
   while (fragment?.firstElementChild) footer.append(fragment.firstElementChild);
-
+  const a = footer.querySelectorAll("a");
+  if (a.length) {
+    a.forEach((item) => {
+      item.target = "_blank";
+      if (item.href.indexOf("www") === -1) {
+        item.title = item.href.slice(
+          item.href.indexOf("://") + 3,
+          item.href.indexOf(".com")
+        );
+      } else {
+        item.title = item.href.slice(
+          item.href.indexOf("www.") + 4,
+          item.href.indexOf(".com")
+        );
+      }
+    });
+  }
   block.append(footer);
 }
