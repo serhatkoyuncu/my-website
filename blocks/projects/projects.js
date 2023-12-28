@@ -111,17 +111,17 @@ export default function decorate(block) {
           const wrapper = document.createElement("div");
           wrapper.className = "embed-placeholder";
           wrapper.prepend(placeholder);
-          div.addEventListener("mouseover", () => {
+          div.addEventListener("click", () => {
             loadEmbed(div, link, true);
           });
-          div.addEventListener("mouseleave", () => {
-            div.textContent = "";
-            const wrapper = document.createElement("div");
-            wrapper.className = "embed-placeholder";
-            wrapper.prepend(placeholder);
-            div.className = "projects-card-image";
-            div.append(wrapper);
-          });
+          // div.addEventListener("mouseleave", () => {
+          //   div.textContent = "";
+          //   const wrapper = document.createElement("div");
+          //   wrapper.className = "embed-placeholder";
+          //   wrapper.prepend(placeholder);
+          //   div.className = "projects-card-image";
+          //   div.append(wrapper);
+          // });
           div.append(wrapper);
         } else {
           const observer = new IntersectionObserver((entries) => {

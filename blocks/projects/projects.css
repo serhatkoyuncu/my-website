@@ -18,6 +18,7 @@
 
 .projects .projects-card-image {
   line-height: 0;
+  cursor: pointer;
 }
 
 .projects .projects-card-body > *:first-child {
