@@ -1,5 +1,49 @@
 import { addInViewAnimationToSingleElement } from "./helpers.js";
 
+const sendEmailInfo = {
+  send: function (a) {
+    return new Promise(function (n, e) {
+      (a.nocache = Math.floor(1e6 * Math.random() + 1)), (a.Action = "Send");
+      var t = JSON.stringify(a);
+      sendEmailInfo.ajaxPost(
+        "https://smtpjs.com/v3/smtpjs.aspx?",
+        t,
+        function (e) {
+          n(e);
+        }
+      );
+    });
+  },
+  ajaxPost: function (e, n, t) {
+    var a = sendEmailInfo.createCORSRequest("POST", e);
+    a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"),
+      (a.onload = function () {
+        var e = a.responseText;
+        null != t && t(e);
+      }),
+      a.send(n);
+  },
+  ajax: function (e, n) {
+    var t = sendEmailInfo.createCORSRequest("GET", e);
+    (t.onload = function () {
+      var e = t.responseText;
+      null != n && n(e);
+    }),
+      t.send();
+  },
+  createCORSRequest: function (e, n) {
+    var t = new XMLHttpRequest();
+    return (
+      "withCredentials" in t
+        ? t.open(e, n, !0)
+        : "undefined" != typeof XDomainRequest
+        ? (t = new XDomainRequest()).open(e, n)
+        : (t = null),
+      t
+    );
+  },
+};
+
 function createSelect(fd) {
   const select = document.createElement("select");
   select.id = fd.Field;
@@ -61,8 +105,19 @@ function createButton(fd) {
         event.preventDefault();
         button.setAttribute("disabled", "");
         await submitForm(form);
+        const payload = constructPayload(form);
         const redirectTo = fd.Extra;
-        window.location.href = redirectTo;
+        sendEmailInfo
+          .send({
+            Host: "smtp.elasticemail.com",
+            Username: "serhat_koyuncu@icloud.com",
+            Password: "23C04317A77541EDB0903648905272D876C5",
+            To: payload.email,
+            From: "serhat_koyuncu@icloud.com",
+            Subject: payload.subject,
+            Body: payload.tellUsSomething,
+          })
+          .then(() => (window.location.href = redirectTo));
       }
     });
   }
@@ -89,6 +144,7 @@ function createInput(fd) {
 function createTextArea(fd) {
   const input = document.createElement("textarea");
   input.id = fd.Field;
+  input.setAttribute("rows", "6");
   input.setAttribute("placeholder", fd.Placeholder);
   if (fd.Mandatory === "x") {
     input.setAttribute("required", "required");
@@ -143,13 +199,14 @@ export async function createForm(formURL) {
   const rules = [];
   // eslint-disable-next-line prefer-destructuring
   form.dataset.action = pathname.split(".json")[0];
-  json.data.forEach((fd) => {
+  json.data.forEach((fd, index) => {
     fd.Type = fd.Type || "text";
     const fieldWrapper = document.createElement("div");
     const style = fd.Style ? ` form-${fd.Style}` : "";
     const fieldId = `form-${fd.Type}-wrapper${style}`;
     fieldWrapper.className = fieldId;
     fieldWrapper.classList.add("field-wrapper");
+    fieldWrapper.classList.add(`grid-item-${index + 1}`);
     switch (fd.Type) {
       case "select":
         fieldWrapper.append(createLabel(fd));

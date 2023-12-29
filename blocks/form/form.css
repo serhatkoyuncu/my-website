@@ -3,7 +3,6 @@ main .form {
   padding: var(--spacing-s);
   border-radius: var(--card-border-radius-l);
   filter: var(--image-filter-drop-shadow-small);
-  border: solid 1px var(--bg-color-grey);
 }
 
 main .form h2 {
@@ -13,7 +12,8 @@ main .form h2 {
 
 main .form h3 {
   padding-top: var(--spacing-s);
-  font-size: var(--type-heading-m-size);
+  font-size: var(--heading-font-size-l);
+  color: #ff8553;
 }
 
 main .form input,
@@ -22,12 +22,12 @@ main .form select {
   border: solid 1px var(--bg-color-grey);
   padding: var(--spacing-xxs) var(--spacing-xs);
   width: 100%;
-  max-width: 50rem;
   box-sizing: border-box;
   border-radius: var(--input-border-radius);
   font-size: var(--type-body-s-size);
   line-height: var(--type-body-s-lh);
   font-family: var(--body-font-family);
+  text-indent: 1rem;
 }
 
 main .form textarea {
@@ -40,7 +40,7 @@ main .form select:hover {
 }
 
 main .form label {
-  display: block;
+  display: none;
   padding-bottom: var(--spacing-xxs);
   box-sizing: border-box;
   font-size: var(--type-body-s-size);
@@ -113,18 +113,38 @@ main .form-legal-wrapper p {
 
 main .form button {
   font-family: var(--body-font-family);
+  padding: 18px 44px;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #ff8553;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #ff8553;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+main .form button:hover {
+  color: #fff;
+  background-color: #ff8553;
 }
 
 @media screen and (min-width: 900px) {
   main .form {
     padding: var(--spacing-ml);
   }
-
-  main .form .field-wrapper {
-    display: flex;
+  main form {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2rem;
   }
-
-  main .form label {
-    width: 72%;
+  main form .grid-item-1,
+  main form .grid-item-2,
+  main form .grid-item-5,
+  main form .grid-item-6 {
+    grid-column: 1 / 3;
   }
 }

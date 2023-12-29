@@ -24,6 +24,9 @@
   --email-icon-width: 50px;
   --header-padding-top: 2rem;
   --footer-backgroud-color: #000;
+  --bg-color-grey: #e5e6e9;
+  --spacing-xxs: 1rem;
+  --spacing-xs: 0.5rem;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
@@ -171,7 +174,6 @@ a:hover {
 main input {
   font-size: 1.25rem;
   width: 100%;
-  max-width: 50rem;
   display: block;
   margin-bottom: 1rem;
   padding: 0.75rem 0.6rem;
