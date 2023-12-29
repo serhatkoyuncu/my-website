@@ -37,14 +37,14 @@ export default function decorate(block) {
     modalDiv.append(modalImg);
     modalDiv.append(captionDiv);
     li.append(modalDiv);
-    li.onclick = function () {
+    li.querySelector("img").addEventListener("click", function () {
       modalDiv.classList.add("fade");
-      modalImg.src = this.querySelector("img").src;
-      captionDiv.innerHTML = this.querySelector("img").alt;
-    };
+      modalImg.src = this.src;
+      captionDiv.innerHTML = this.alt;
+    });
 
     closeSpan.onclick = function () {
-      modalDiv.classList.remove("fade");
+      li.querySelector(".modal").classList.remove("fade");
     };
   });
 

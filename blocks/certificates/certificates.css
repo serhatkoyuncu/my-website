@@ -96,7 +96,7 @@
 /* The Close Button */
 .certificates .close {
   position: absolute;
-  top: 100px;
+  top: 87px;
   right: 35px;
   color: #f1f1f1;
   font-size: 40px;
@@ -111,15 +111,23 @@
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .certificates .modal-content {
     width: 100%;
   }
-}
-
-@media screen and (max-width: 900px) {
   .certificates > ul {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .certificates .close {
+    border-radius: 50%;
+    background: var(--header-background-color);
+    width: 47px;
+    text-align: center;
+    height: 47px;
+    font-size: 30px;
+    top: 110px;
+    right: 10px;
+    color: #fff;
+    z-index: 3;
   }
 }
