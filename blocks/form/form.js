@@ -109,13 +109,19 @@ function createButton(fd) {
         const redirectTo = fd.Extra;
         sendEmailInfo
           .send({
-            Host: "smtp.elasticemail.com",
-            Username: "serhat_koyuncu@icloud.com",
-            Password: "23C04317A77541EDB0903648905272D876C5",
-            To: payload.email,
+            SecureToken: "87d61bc9-fa68-4ae9-8253-02400551ee18",
+            // Host: "smtp.elasticemail.com",
+            // Username: "serhat_koyuncu@icloud.com",
+            // Password: "9833A40F4298DDD82086DEBD38DE6D1D7BCB",
+            To: "serhat_koyuncu@icloud.com",
             From: "serhat_koyuncu@icloud.com",
-            Subject: payload.subject,
-            Body: payload.tellUsSomething,
+            Subject: "www.serhatkoyuncu.com iletişim sayfasından gelen mail",
+            Body: `
+            <h2>İletişim Maili</h2>
+            <p><b>Gönderici Email :</b> ${payload.email} <br></p>
+            <p><b>Konu :</b> ${payload.subject.toUpperCase()}<br></p>
+            <p><b>Mesaj :</b><br><i>${payload.tellUsSomething}</i></p>
+            `,
           })
           .then(() => (window.location.href = redirectTo));
       }
