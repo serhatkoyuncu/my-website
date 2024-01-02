@@ -127,25 +127,6 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector(".nav-brand");
-  const navImage = nav.querySelector(".nav-tools img").closest("div");
-
-  const profileResponse = await fetch("https://admin.hlx.page/login");
-  const hasProfile = await profileResponse.json();
-  console.log(hasProfile);
-
-  navImage.addEventListener("click", async function () {
-    fetch("https://admin.hlx.page/login/serhatkoyuncu/my-website/main", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (!data.links.logout) {
-          console.log("data :>> ", data.links.login_google);
-          window.open(data.links.login_google);
-        }
-      })
-      .catch((e) => console.log(e));
-  });
   const brandLink = navBrand.querySelector(".button");
   if (brandLink) {
     brandLink.className = "";
