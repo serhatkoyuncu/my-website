@@ -129,13 +129,10 @@ export default async function decorate(block) {
   const navBrand = nav.querySelector(".nav-brand");
   const navImage = nav.querySelector(".nav-tools img").closest("div");
   navImage.addEventListener("click", async function () {
-    console.log("object");
-    const response = await fetch(
-      "https://admin.hlx.page/login/serhatkoyuncu/my-website/main"
-    );
+    const response = await fetch("https://admin.hlx.page/login");
     const loginLinks = await response.json();
-    // window.location.href = loginLinks.links.login_google;
-    console.log(loginLinks);
+    window.location.href = loginLinks.links.login_google;
+    console.log(loginLinks.links.login_google);
   });
   const brandLink = navBrand.querySelector(".button");
   if (brandLink) {
