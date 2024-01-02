@@ -4,6 +4,12 @@ import { loadFragment } from "../fragment/fragment.js";
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia("(min-width: 900px)");
 
+async function login() {
+  const response = await fetch("https://admin.hlx.page/login");
+  const loginLinks = await response.json();
+  console.log(loginLinks);
+}
+
 function closeOnEscape(e) {
   if (e.code === "Escape") {
     const nav = document.getElementById("nav");
@@ -121,6 +127,16 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector(".nav-brand");
+  const navImage = nav.querySelector(".nav-tools img").closest("div");
+  navImage.addEventListener("click", async function () {
+    console.log("object");
+    const response = await fetch(
+      "https://admin.hlx.page/login/serhatkoyuncu/my-website/main"
+    );
+    const loginLinks = await response.json();
+    // window.location.href = loginLinks.links.login_google;
+    console.log(loginLinks);
+  });
   const brandLink = navBrand.querySelector(".button");
   if (brandLink) {
     brandLink.className = "";
