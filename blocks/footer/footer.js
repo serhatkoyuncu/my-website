@@ -9,6 +9,24 @@ export default async function decorate(block) {
   const footerMeta = getMetadata("footer");
   block.textContent = "";
 
+  const scrollButton = document.createElement("button");
+  scrollButton.className = "scroll-button";
+  scrollButton.title = "Scroll Top";
+  scrollButton.onclick = () => {
+    document.body.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  const topImg = document.createElement("img");
+  topImg.src = "../../assets/top.png";
+  topImg.alt = "Top Image";
+  scrollButton.append(topImg);
+
   // load footer fragment
   const footerPath = footerMeta.footer || "/footer";
   const fragment = await loadFragment(footerPath);
@@ -34,4 +52,15 @@ export default async function decorate(block) {
     });
   }
   block.append(footer);
+  block.append(scrollButton);
+  window.onscroll = () => {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      scrollButton.style.display = "block";
+    } else {
+      scrollButton.style.display = "none";
+    }
+  };
 }
