@@ -47,7 +47,7 @@
 
 .blog > ul > li img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: auto;
   object-fit: cover;
 }
 
@@ -90,7 +90,8 @@
 
 @media screen and (max-width: 576px) {
   .blog.content .blog-card-body p,
-  .blog.content .blog-card-body li {
+  .blog.content .blog-card-body li,
+  .blog .button-back {
     font-size: var(--body-font-size-xs);
   }
 }
