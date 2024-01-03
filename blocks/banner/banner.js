@@ -37,12 +37,3 @@ export default function decorate(block) {
     });
   });
 }
-
-fetch("https://www.serhatkoyuncu.com/test.json", {
-  method: "GET",
-  headers: {
-    Accept: "application/json",
-  },
-})
-  .then((response) => response.json())
-  .then((response) => console.log(response));
