@@ -38,7 +38,7 @@ export default function decorate(block) {
   });
 }
 
-fetch("https://www.serhatkoyuncu.com/test.json", {
+fetch("https://www.serhatkoyuncu.com/form.json", {
   method: "GET",
   headers: {
     Accept: "application/json",
