@@ -87,3 +87,10 @@
   padding: 15px;
   border-radius: 4px;
 }
+
+@media screen and (max-width: 576px) {
+  .blog.content .blog-card-body p,
+  .blog.content .blog-card-body li {
+    font-size: var(--body-font-size-xs);
+  }
+}
