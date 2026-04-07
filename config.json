@@ -1,0 +1,48 @@
+{
+  "project": "my-website",
+  "version": 1,
+
+  "settings": {
+    "locale": "tr",
+    "theme": "default",
+    "title": "Serhat Koyuncu Website",
+    "description": "AEM Live site example"
+  },
+
+  "templates": {
+    "default": {
+      "model": "page",
+      "blocks": ["header", "hero", "content", "footer"]
+    }
+  },
+
+  "blocks": {
+    "header": {
+      "model": "header",
+      "path": "/blocks/header"
+    },
+    "hero": {
+      "model": "hero",
+      "path": "/blocks/hero"
+    },
+    "content": {
+      "model": "section",
+      "path": "/blocks/content"
+    },
+    "footer": {
+      "model": "footer",
+      "path": "/blocks/footer"
+    }
+  },
+
+  "routes": [
+    {
+      "path": "/",
+      "template": "default"
+    },
+    {
+      "path": "/about",
+      "template": "default"
+    }
+  ]
+}
