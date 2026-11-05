@@ -939,10 +939,10 @@
     grid-template-columns: minmax(0, 1fr);
   }
   .cube-transform .workspace {
-    order: 1;
+    order: 2;
   }
   .cube-transform .controls-panel {
-    order: 2;
+    order: 1;
   }
 }
 
