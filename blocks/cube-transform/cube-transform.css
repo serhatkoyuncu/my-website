@@ -143,7 +143,27 @@
   padding: 23px 22px 25px;
   align-self: start;
   overflow-y: auto;
-  height: clamp(380px, 70vw, 875px);
+  height: clamp(380px, 70vw, 620px);
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 .cube-transform .panel-intro {
@@ -228,6 +248,7 @@
   border-radius: 9px;
   min-width: 0;
   overflow: hidden;
+  height: 38.5px;
 }
 .cube-transform .numeric-field > span {
   font-family: Inter, sans-serif;
@@ -250,6 +271,7 @@
   font-size: 12px;
   color: #28364b;
   font-variant-numeric: tabular-nums;
+  margin: 0;
 }
 .cube-transform .numeric-field input:focus {
   background: #f5f8ff;
