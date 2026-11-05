@@ -1,4 +1,8 @@
 /* AEM Edge Delivery Services /blocks/cube-transform/cube-transform.css */
+.cube-transform-container {
+  padding-top: 110px;
+}
+
 .cube-transform {
   display: block;
   width: 100%;
