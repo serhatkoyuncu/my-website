@@ -1,7 +1,4 @@
 /* AEM Edge Delivery Services /blocks/cube-transform/cube-transform.css */
-.cube-transform-container {
-  padding-top: 110px;
-}
 
 .cube-transform {
   display: block;
@@ -41,6 +38,7 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  margin-top: 2rem;
 }
 .cube-transform,
 .cube-transform * {
