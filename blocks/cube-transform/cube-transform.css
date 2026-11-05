@@ -800,3 +800,66 @@
     order: 1;
   }
 }
+
+/* AEM section genişliği */
+.section.cube-transform-container {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding-inline: 0;
+  box-sizing: border-box;
+}
+
+/* AEM block wrapper */
+.section.cube-transform-container > .cube-transform-wrapper {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 3vw, 48px);
+  box-sizing: border-box;
+}
+
+/* Ana uygulama */
+.cube-transform {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* İki kolonlu yerleşim */
+.cube-transform .layout {
+  display: grid;
+  width: 100%;
+  max-width: 1720px;
+  min-width: 0;
+  margin-inline: auto;
+  grid-template-columns:
+    minmax(0, 354px)
+    minmax(0, 1fr);
+}
+
+/* Grid içindeki elemanlar */
+.cube-transform .controls-panel,
+.cube-transform .workspace,
+.cube-transform .viewport-card,
+.cube-transform .bottom-grid,
+.cube-transform .canvas-container {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Küçük ekranlar */
+@media (max-width: 900px) {
+  .cube-transform .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cube-transform .workspace {
+    order: 1;
+  }
+
+  .cube-transform .controls-panel {
+    order: 2;
+  }
+}
