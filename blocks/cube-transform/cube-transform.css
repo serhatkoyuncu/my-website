@@ -1,10 +1,12 @@
 /* AEM Edge Delivery Services /blocks/cube-transform/cube-transform.css */
 
+.section.cube-transform-container {
+  background: #f4f6fa;
+}
 .cube-transform {
   display: block;
   width: 100%;
   color: #142037;
-  background: #f4f6fa;
   border-radius: 18px;
   overflow: hidden;
   isolation: isolate;
@@ -38,7 +40,7 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .cube-transform,
 .cube-transform * {
@@ -64,6 +66,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 34px;
+  border-radius: 18px;
 }
 .cube-transform .brand {
   display: flex;
@@ -132,7 +135,7 @@
   gap: 20px;
   max-width: 1720px;
   margin: auto;
-  padding: 20px;
+  padding: 20px 0;
   min-height: calc(100vh - 76px);
 }
 .cube-transform .controls-panel {
@@ -146,22 +149,22 @@
   height: clamp(380px, 70vw, 620px);
 
   /* width */
-  ::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 10px;
   }
 
   /* Track */
-  ::-webkit-scrollbar-track {
+  &::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
 
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     background: #888;
   }
 
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+  &::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
 }
