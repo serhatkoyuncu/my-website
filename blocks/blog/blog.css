@@ -1,3 +1,7 @@
+.section.hero-container:has(.blog) {
+  display: none;
+}
+
 .blog.content {
   display: none;
 }
@@ -26,6 +30,9 @@
   background-color: var(--background-color);
   border: 1px solid var(--highlight-background-color);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .blog:not(.content) > ul > li:hover {
@@ -42,11 +49,12 @@
 
 .blog:not(.content) .blog-card-body > *:first-child {
   margin-top: 0;
+  margin-bottom: 0;
   text-align: center;
 }
 
 .blog > ul > li img {
-  width: 100%;
+  /* width: 100%; */
   aspect-ratio: auto;
   object-fit: cover;
 }
