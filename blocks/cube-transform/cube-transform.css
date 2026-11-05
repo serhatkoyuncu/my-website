@@ -144,7 +144,10 @@
   box-shadow: 0 7px 35px #1a326206;
   padding: 23px 22px 25px;
   align-self: start;
+  overflow-y: auto;
+  height: clamp(380px, 70vw, 875px);
 }
+
 .cube-transform .panel-intro {
   margin-bottom: 18px;
 }
