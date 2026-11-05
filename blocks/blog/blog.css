@@ -1,4 +1,4 @@
-.section.hero-container:has(.blog) {
+.section.hero-container:has(+ .blog) {
   display: none;
 }
 
