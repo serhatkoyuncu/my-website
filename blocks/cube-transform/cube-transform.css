@@ -958,3 +958,60 @@
     padding-inline: 14px;
   }
 }
+
+/* Input kaynaklı yatay taşmayı düzelt */
+
+.cube-transform .field-grid {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.cube-transform .field-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cube-transform .field-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cube-transform .numeric-field {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.cube-transform .numeric-field > span {
+  flex: 0 0 auto;
+}
+
+.cube-transform .numeric-field input {
+  flex: 1 1 0% !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Ana yerleşim */
+.cube-transform .layout {
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: minmax(0, 354px) minmax(0, 1fr);
+}
+
+.cube-transform .workspace,
+.cube-transform .controls-panel {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .cube-transform .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
