@@ -1,7 +1,3 @@
-.section.hero-container:has(+ .section.blog-container) {
-  display: none;
-}
-
 .blog.content {
   display: none;
 }
